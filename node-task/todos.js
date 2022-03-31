@@ -4,7 +4,7 @@ var todoListData = [];
 
 if (typeof localStorage === "undefined" || localStorage === null) {
   var LocalStorage = require("node-localstorage").LocalStorage;
-  localStorage = new LocalStorage("./scratch");
+  localStorage = new LocalStorage("./list");
 }
 
 var help = () => {
@@ -41,7 +41,7 @@ var listTodo = () => {
 
 var deleteTodo = (items) => {
   localStorage.removeItem(items);
-  console.log("Usage : todos delete [task]") //to delete task
+  console.log("Usage : todos delete [task]") 
   listTodo();
 };
 
